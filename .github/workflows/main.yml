@@ -25,6 +25,8 @@ jobs:
           flutter analyze
           flutter test
           flutter build apk
+      - name: Run Flutter test
+        run: flutter test
   build-web:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
