@@ -44,3 +44,4 @@ jobs:
           flutter analyze
           flutter test
           flutter build web
+          firebase deploy --token "${{ secrets.WEB_DEPLOY_TOKEN }}"
