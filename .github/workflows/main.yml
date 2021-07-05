@@ -44,3 +44,11 @@ jobs:
           flutter analyze
           flutter test
           flutter build web
+      - name: Deploy web
+        env:
+          WEB_DEPLOY_TOKEN: ${{ secrets.WEB_DEPLOY_TOKEN }}
+        if: github.base_ref == 'main'
+        run: |
+          curl -sL https://firebase.tools | bash
+          firebase deploy --token $WEB_DEPLOY_TOKEN
+      
