@@ -24,7 +24,7 @@ jobs:
           flutter format --set-exit-if-changed .
           flutter analyze
           flutter test
-          flutter build apk
+          flutter build apk --debug
       - name: Run Flutter test
         run: flutter test
   build-web:
