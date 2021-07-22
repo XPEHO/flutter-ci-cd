@@ -204,6 +204,9 @@ class Content extends StatelessWidget {
           child: Text('www.medium.com'),
         ),
         SizedBox(
+          height: 48.0,
+        ),
+        SizedBox(
           height: _logoHeight,
           width: double.infinity,
           child: Wrap(
@@ -243,6 +246,9 @@ class Content extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: 48.0,
+        ),
       ],
     );
   }
@@ -260,7 +266,9 @@ class LandscapeLayout extends StatelessWidget {
           ),
           Expanded(
             flex: 8,
-            child: Content(),
+            child: SingleChildScrollView(
+              child: Content(),
+            ),
           ),
         ],
       ),
@@ -295,14 +303,8 @@ class PortraitLayout extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Flexible(
-            flex: 1,
-            child: Menu(true),
-          ),
-          Flexible(
-            flex: 5,
-            child: Content(),
-          ),
+          Menu(true),
+          Content(),
         ],
       ),
     );
