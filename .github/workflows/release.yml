@@ -5,13 +5,9 @@ on:
         - main
 
 jobs:
-  # This workflow contains a single job called "build"
   release:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Configure signature
         run: |
@@ -23,7 +19,8 @@ jobs:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.0.5'
+          flutter-version: '2.5.0'
+          channel: stable
       - name: Build apk
         run: | 
           flutter pub get
